@@ -36,7 +36,7 @@
 
       {% if author.uri %}
         <li>
-          <a href="{{ author.uri }}" itemprop="url">
+          <a href="https://{{ author.uri }}" itemprop="url">
             <i class="fa fa-fw fa-chain" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].website_label | default: "Website" }}
           </a>
         </li>
@@ -154,7 +154,14 @@
           </a>
         </li>
       {% endif %}
-
+      
+      {% if author.bilibili_uid %}
+        <li>
+          <a href="https://space.bilibili.com/{{ author.bilibili_uid }}" itemprop="sameAs">
+            <i class="fa fa-fw fa-bilibili-square" aria-hidden="true"></i> BiliBili
+          </a>
+        </li>
+      {% endif %}
       {% if author.lastfm %}
         <li>
           <a href="https://last.fm/user/{{ author.lastfm }}" itemprop="sameAs">
@@ -221,7 +228,7 @@
 
       {% if author.weibo %}
         <li>
-          <a href="https://www.weibo.com/{{ author.weibo }}" itemprop="sameAs">
+          <a href="https://weibo.com/{{ author.weibo }}" itemprop="sameAs">
             <i class="fa fa-fw fa-weibo" aria-hidden="true"></i> Weibo
           </a>
         </li>
